@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/global.scss"
             ],
             "scripts": []
           },
@@ -94,7 +94,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/global.scss"
             ],
             "scripts": []
           }
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "wlxChallenge"
+  "defaultProject": "wlxChallenge",
+  "cli": {
+    "analytics": "6be76b96-32ad-49cf-8f32-0742b28b800a"
+  }
 }
