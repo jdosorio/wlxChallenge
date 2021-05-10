@@ -1,0 +1,25 @@
+@import '../../../../styles/global.scss';
+
+#thanks-section{
+    padding: 60px 15px 15px 15px;
+    text-align: center;
+    background-image: url('/assets/Backgrounds/Bg_Footer@3x.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 70px;
+    margin-bottom: 50px;
+
+    .wolox{
+        margin-top: 180px;
+    }
+
+    .thanks-button{
+        padding-top: 50px;
+    }
+
+    .btn{
+      @include btnStyle($blue-color, $white-color);
+    }
+}

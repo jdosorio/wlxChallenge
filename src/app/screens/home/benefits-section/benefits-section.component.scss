@@ -1,0 +1,44 @@
+@import '../../../../styles/global.scss';
+
+#benefits-section{
+    text-align: center;
+    padding-top: 70px;
+
+    .benefits-content{
+        display: inline-grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 20px;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+
+        .benefit-item{
+            padding-top:20px;
+        }
+
+        .benefitText{
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    }
+}
+
+@include screen(900px) {
+  .benefits-content{
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@include screen(600px) {
+  .benefits-content{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .benefitImage{
+    width: 25%
+  }
+}
+@include screen(400px) {
+  .benefits-content{
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}

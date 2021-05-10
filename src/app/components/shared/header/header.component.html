@@ -1,0 +1,14 @@
+<header>
+    <div class="logo" tabindex="0"></div>
+    <nav>
+        <ul class="nav__links">
+            <li *ngIf="!isAuthenticated"><a [routerLink]="['/']">Inicio</a></li>
+            <li *ngIf="!isAuthenticated"><a (click)="scroll('benefits-section')" >Beneficios</a></li>
+            <li *ngIf="countFavorites > 0"><span class="favIcon">{{countFavorites}}</span></li>
+            <li *ngIf="isAuthenticated"><a (click)="logout()">Salir</a></li>
+            <li *ngIf="!isAuthenticated"><button type="submit" class="btn" [routerLink]="['/register']">Registro</button></li>
+            <li *ngIf="isAuthenticated"><a class="cta blue-text" [routerLink]="['/technologies']">Tecnologias</a></li>
+        </ul>
+    </nav>
+</header>
+

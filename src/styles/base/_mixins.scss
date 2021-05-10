@@ -1,0 +1,17 @@
+@mixin set-color($color) {
+    color: $color;
+}
+
+@mixin btnStyle($background-color: $white-color, $color: $blue-color, $border-color: $blue-color){
+  padding: 0.4rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  border-radius: 2rem;
+  background-color: $background-color ;
+  border: 2px;
+  border-style: solid;
+  border-color: $border-color;
+  color:$color;
+  font-size: 16px;
+  margin:0 auto;
+}
