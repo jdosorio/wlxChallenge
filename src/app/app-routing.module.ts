@@ -10,6 +10,9 @@ const routes: Routes = [
   {
     path: 'home', loadChildren: () => import('./screens/home/home.module').then(m => m.HomeModule)
   },
+  {
+    path: 'register', loadChildren: () => import('./screens/register/register.module').then(m => m.RegisterModule),
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+@import '../../../styles/global.scss';
+
+*{
+    font-size: 14px;
+}
+
+@include screen(600px){
+  .row{
+    flex-direction: column;
+  }
+}
+
+footer{
+  position: fixed;
+  height: 50px;
+    background-color: red;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
