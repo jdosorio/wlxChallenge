@@ -12,6 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(user:User) {
-    return this.http.post<Token>(`${environment.apiUrl}/signup`, user);
+    return this.http.post<any>(`${environment.apiUrl}/signup`, user);
   }
 }

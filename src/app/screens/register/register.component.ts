@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     delete this.registerForm.value.passwordValidate;
 
-    this.authService.register(this.registerForm.value).subscribe(resp => {
+    this.authService.register(this.registerForm.value).subscribe((resp) => {
       localStorage.setItem('token', resp.token);
       this.authenticationService.isAuthenticated.next(true);
       this.router.navigateByUrl('/technologies');
