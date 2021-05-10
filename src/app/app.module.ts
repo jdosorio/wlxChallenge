@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { HomeModule } from './screens/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,55 @@
+
+<div class="container">
+  <div class="form-area">
+    <h1 class="title">Lista de Tecnologias</h1>
+      <div class="row">
+          <div class="column">
+              <label for="pais">Buscar por Tecnologia</label>
+              <input type="text" [(ngModel)]="searchText" name="searchText">
+          </div>
+          <div class="column">
+              <label for="departamento">Buscar por Tipo</label>
+              <select class="custom-select" #selectList
+              [(ngModel)]="techType" (change)="filterSelect()">
+                <option value=""></option>
+                <option *ngFor="let type of typesTech" [value]="type.description">{{type.description}}</option>
+             </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="divTable blueTable">
+          <div class="divTableHeading">
+            <div class="divTableRow">
+              <div class="divTableHead">Favoritos</div>
+              <div class="divTableHead">Logo</div>
+              <div class="divTableHead sort" (click)="sortList()">Tecnología<img src="../../../assets/Ic_Sort.svg"></div>
+              <div class="divTableHead">Autor</div>
+              <div class="divTableHead">Licencia</div>
+              <div class="divTableHead">Lenguaje</div>
+              <div class="divTableHead">Tipo</div>
+              <div class="divTableHead">Año</div>
+            </div>
+          </div>
+
+          <div class="divTableBody">
+            <div class="divTableRow" *ngFor="let row of techList | filter: searchText:filterCount;">
+              <div class="divTableCell">
+                <app-favorites [key]="row.tech"></app-favorites>
+              </div>
+              <div class="divTableCell"><img src="{{row.logo}}" class="logo-class"></div>
+              <div class="divTableCell">{{ row.tech }}</div>
+              <div class="divTableCell">{{ row.author }}</div>
+              <div class="divTableCell">{{ row.license }}</div>
+              <div class="divTableCell">{{ row.language }}</div>
+              <div class="divTableCell">{{ row.type }}</div>
+              <div class="divTableCell">{{ row.year }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer">
+          Total: {{ filterCount.count}}
+        </div>
+      </div>
+    </div>
+</div>
