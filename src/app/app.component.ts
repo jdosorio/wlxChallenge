@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { SpinnerService } from './services/spinner.service';
 
 @Component({
@@ -18,5 +18,20 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.spinnerService.isLoading.subscribe(show => this.showLoading = show);
+  }
+
+  ngAfterViewInit() {
+    this.router.events
+        .subscribe((event) => {
+            if(event instanceof NavigationStart) {
+              this.spinnerService.showLoading(true);
+            }
+            else if (
+                event instanceof NavigationEnd ||
+                event instanceof NavigationCancel
+                ) {
+                  this.spinnerService.showLoading(false);
+            }
+        });
   }
 }

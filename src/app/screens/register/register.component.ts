@@ -19,7 +19,12 @@ export class RegisterComponent implements OnInit {
   cities:any = [];
   provinces:any = provinces;
 
-  constructor(public fm: FormBuilder, private authService:AuthService, private router: Router, private authenticationService:AuthenticationService) {
+  constructor(
+    public fm: FormBuilder,
+    private authService:AuthService,
+    private router: Router,
+    private authenticationService:AuthenticationService
+  ) {
 
     this.registerForm = fm.group({
       names: new FormControl('', [Validators.required, Validators.maxLength(30)]),

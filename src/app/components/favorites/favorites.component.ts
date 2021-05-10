@@ -15,9 +15,8 @@ export class FavoritesComponent implements OnInit {
   iconActive = '../../../assets/Ic_Active_Star.svg';
   iconInactive = '../../../assets/Ic_Inactive_Star.svg';
 
-  constructor(private navData:NavDataService) {
-
-  }
+  constructor(
+    private navData:NavDataService) {}
 
   ngOnInit(): void {
     var favorites = JSON.parse(localStorage.getItem('favorites') || this.defaultValue);
