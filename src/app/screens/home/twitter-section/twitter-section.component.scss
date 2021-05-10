@@ -1,0 +1,103 @@
+@import '../../../../styles/global.scss';
+
+#twitter-section{
+    display: flex;
+
+    .men-computer{
+        background-image: url('/assets/ImgHome/img_woloxer@3x.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        flex: 1.5;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+    }
+
+    .text-twitter{
+        height: 400px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #f2f5fa;
+
+        .size-text{
+            font-size: 35px;
+        }
+    }
+
+    .text-content{
+        font-size: 55px;
+    }
+
+    .logo-twitter{
+            margin-right: 0.5rem;
+			background-image: url('/assets/twitter.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+
+			height: 40px;
+			width: 40px;
+    }
+}
+
+.content-twitter{
+    display:flex;
+    justify-content: center;
+}
+
+
+.btn{
+  @include btnStyle(transparent, $white-color);
+}
+
+  @media only screen and (max-width: 768px) {
+
+    #twitter-section{
+        .text-content{
+            font-size: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #twitter-section{
+        display: block;
+        .text-twitter{
+            height: 200px;
+            .size-text{
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    #twitter-section{
+        .men-computer{
+            height: 200px;
+        }
+        .text-twitter{
+            height: 150px;
+            .size-text{
+                font-size: 20px;
+            }
+        }
+        .text-content{
+            font-size: 20px;
+        }
+
+        .logo-twitter{
+            height: 20px;
+            width: 20px;
+            margin-right: 0;
+        }
+    }
+}

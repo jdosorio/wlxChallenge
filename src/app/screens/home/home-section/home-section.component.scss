@@ -1,0 +1,91 @@
+@import '../../../../styles/global.scss';
+
+#home{
+    display: flex;
+    background-image: url('/assets/Backgrounds/Bg_Header@3x.png');
+    background-size: cover;
+    padding-top: 130px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+}
+
+.text-hero{
+    flex: 1;
+    padding: 60px;
+    padding-top: 110px;
+}
+
+.img-hero{
+    flex: 1;
+    text-align: left;
+
+}
+
+.font-weight{
+    font-size: 35px;
+}
+
+.top{
+    padding-top: 10rem;
+}
+
+.img-style{
+    width: auto;
+    height: auto;
+    max-height: 360px;
+    transform: scaleX(-1);
+    max-width: 100%;
+}
+
+@include screen(768px){
+  #home{
+      padding-top:160px
+  }
+
+  .text-hero{
+      padding-top:70px;
+  }
+}
+
+@include screen(678px){
+  #home{
+      padding-top:160px
+  }
+
+  .text-hero{
+      padding-top:70px;
+  }
+}
+
+@include screen(600px){
+  .img-style{
+    max-height: 270px;
+  }
+
+  .text-hero{
+      padding-top: 40px;
+  }
+}
+
+@include screen(600px){
+  #home{
+    display: block;
+  }
+
+  .font-weight{
+      font-size: 20px;
+  }
+
+  .text-hero{
+      padding: 20px;
+      text-align: center;
+  }
+
+  .img-hero{
+      text-align: center;
+  }
+
+  .img-style{
+      max-height: 230px;
+  }
+}

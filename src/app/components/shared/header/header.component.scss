@@ -1,0 +1,172 @@
+@import '../../../../styles/global.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 140px;
+  }
+
+  nav > ul {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    flex:1;
+    justify-content:flex-end;
+  }
+
+  .nav__links {
+    list-style: none;
+    display: flex;
+  }
+
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .nav__links li {
+    padding: 0px 20px;
+  }
+
+  .nav__links li a {
+    transition: all 0.3s ease 0s;
+  }
+
+  .nav__links li a:hover {
+    color: #0088a9;
+  }
+
+  .cta {
+    padding: 0.4rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    border-radius: 2rem;
+    background-color: $white-color;
+    border: none;
+    cursor: pointer;
+    border-style: solid;
+    border-color: $blue-color;
+    color: $blue-color!important;
+  }
+
+  .cta:hover {
+    background-color:$blue-color;
+    color: $white-color !important;
+  }
+
+  /* Mobile Nav */
+
+  .menu {
+    display: none;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+  }
+
+  .overlay--active {
+    width: 100%;
+  }
+
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #0088a9;
+  }
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+    cursor: pointer;
+  }
+
+  .favIcon{
+    background-image: url('../../../assets/Ic_Active_Star.svg');
+    font-size: 13px;
+    background-repeat: no-repeat;
+    padding: 16px 17px;
+  }
+
+
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+  @include screen(768px){
+    header{
+      display: block;
+    }
+
+    .logo{
+        margin: 0 auto;
+        width: 10rem;
+        height: 30px;
+    }
+
+    nav{
+        margin-top: 20px;
+
+        ul {
+            justify-content: center;
+        }
+    }
+  }
+
+  @include screen(500px){
+    .btn{
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  @include screen(420px){
+    nav > ul > li{
+      padding: 0px 10px;
+    }
+  }

@@ -1,0 +1,10 @@
+
+.btn{
+  @include btnStyle();
+}
+
+.btn:disabled{
+  @include btnStyle($white-color,$gray-color, $gray-color);
+  cursor: not-allowed;
+
+}
