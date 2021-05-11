@@ -1,4 +1,4 @@
 
 export class Token {
-  token?: string;
+  token: string;
 }

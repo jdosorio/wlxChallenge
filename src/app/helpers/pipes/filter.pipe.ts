@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/technology.interface';
 
 @Pipe({
   name: 'filter',

@@ -9,7 +9,9 @@ import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/tec
 })
 export class TechnologiesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getList(): Observable<EnumTechnologyItems> {
     return this.http.get<EnumTechnologyItems>(`${environment.apiUrl}/techs`);

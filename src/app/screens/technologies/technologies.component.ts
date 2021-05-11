@@ -24,7 +24,9 @@ export class TechnologiesComponent implements OnInit {
   keyValue:string;
   isSort:boolean = false;
 
-  constructor(private techService:TechnologiesService) { }
+  constructor(
+    private techService:TechnologiesService
+  ) { }
 
   ngOnInit(): void {
     this.loadTech();

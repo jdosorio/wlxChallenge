@@ -8,15 +8,13 @@
   .row{
     flex-direction: column;
   }
+
+  .title{
+    font-size:22px;
+  }
 }
 
-footer{
-  position: fixed;
-  height: 50px;
-    background-color: red;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
+.displayError{
+  margin-bottom: 10px;
 }
 
