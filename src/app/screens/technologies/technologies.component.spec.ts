@@ -13,6 +13,8 @@ import { LIST_TECH_FAKE } from 'src/app/mocks/list-tech.fake.spec';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable, of } from 'rxjs';
 import { TechListServiceFake } from 'src/app/mocks/list-tech.service.spec';
+import { By } from '@angular/platform-browser';
+
 
 describe('TechnologiesComponent', () => {
   let component: TechnologiesComponent;
@@ -64,9 +66,26 @@ describe('TechnologiesComponent', () => {
     expect(subSpy).toHaveBeenCalled();
   }));
 
-  it('testing execution within subscribe method',fakeAsync(() => {
+  it('should validate data listTech',fakeAsync(() => {
     expect(component.techList.length).toBeGreaterThan(0);
   }));
+
+  it('should validate data equals to 3(FakeService)',fakeAsync(() => {
+    expect(component.techList.length).toEqual(3);
+  }));
+
+  it('should favorite component exist', () => {
+    const { debugElement } = fixture;
+    const favorite = debugElement.query(By.css('app-favorites'));
+    expect(favorite).toBeTruthy();
+  });
+
+  it('should mark favorite tech', () => {
+    const { debugElement } = fixture;
+    const favorite = debugElement.query(By.css('app-favorites'));
+
+
+  });
 
 
 });
