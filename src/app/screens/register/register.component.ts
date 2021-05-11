@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       country: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
-      phone: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      phone: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       passwordValidate: new FormControl('', [Validators.required, Validators.minLength(6)]),
       terms: new FormControl(false, [Validators.requiredTrue])
@@ -65,6 +65,7 @@ export class RegisterComponent implements OnInit {
   }
 
   changeCity(event:Event){
+    this.registerForm.controls['city'].setValue("");
     this.cities = this.provinces[(<HTMLInputElement>event.target).value].provinces;
   }
 

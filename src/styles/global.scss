@@ -4,7 +4,6 @@
 @import './base/buttons';
 @import './base/screen';
 
-
 html{
   font: $font-size 'Montserrat';
   color: $text-primary;
@@ -15,85 +14,86 @@ html{
 }
 
 body{
-margin: 0;
+  margin: 0;
 }
 
 .bold-text{
-font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold";
 }
 
 .green-text{
-@include set-color($green-color);
+  @include set-color($green-color);
 }
 
 .white-text{
-@include set-color($white-color);
+  @include set-color($white-color);
 }
 
 .blue-text{
-@include set-color($blue-color);
+  @include set-color($blue-color);
 }
 
 .weight-bold{
-font-weight: 700;
+  font-weight: 700;
 }
 
 .container{
-background-image: url('/assets/Backgrounds/Bg_Header@3x.png');
-background-size: cover;
-padding-top: 160px;
-background-repeat: no-repeat;
-background-position: 100% 100%;
-margin-bottom: 50px;
+  background-image: url('/assets/Backgrounds/Bg_Header@3x.png');
+  background-size: cover;
+  padding-top: 160px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  margin-bottom: 50px;
 }
 
 .form-area{
-background: rgba(0,0,0,0.8);
-border-radius: 25px;
-padding: 1rem;
-max-width: 85%;
-margin: 0 auto;
+  background: rgba(0,0,0,0.8);
+  border-radius: 25px;
+  padding: 1rem;
+  max-width: 85%;
+  margin: 0 auto;
 }
 
 .row{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-width:100%;
-grid-column-gap: 35px;
-color: $white-color;
-overflow-y: auto;
-border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+  grid-column-gap: 35px;
+  color: $white-color;
+  overflow-y: auto;
+  border-radius: 10px;
 }
 
 .column{
-display: flex;
-flex-direction: column;
-flex-basis: 100%;
-flex:1;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex:1;
 }
 
 .column input,select{
-padding:0.5rem;
-margin-bottom: 1rem;
-border-radius: 10px;
+  padding:0.5rem;
+  margin-bottom: 0.4rem;
+  border-radius: 10px;
+  outline: none;
 }
 
 .btn:not([disabled]):hover{
-background-color: $blue-color;
-color: $white-color;
+  background-color: $blue-color;
+  color: $white-color;
 }
 
 .color-a{
-color: $blue-color;
+  color: $blue-color;
 }
 
 small{
-color: #FF5733;
+  color: #FF5733;
 }
 
 .text-center{
-text-align:center;
+  text-align:center;
 }
 
 .logo {
@@ -104,3 +104,18 @@ text-align:center;
   height: 30px;
   flex:1;
 }
+
+.title{
+  font-size: 25px;
+  text-align: center;
+  color: $white-color;
+}
+
+/*footer{
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}*/

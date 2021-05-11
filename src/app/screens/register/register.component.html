@@ -1,19 +1,20 @@
 
 <div class="container">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-area">
+        <h1 class="title">Formulario Registro</h1>
         <div class="row">
             <div class="column">
-                <label for="">Nombres</label>
+                <label for="">Nombres *</label>
                 <input type="text" formControlName="names" id="names" maxlength="30">
                 <div *ngIf="f.names.invalid && (f.names.dirty || f.names.touched)" class="text-danger ">
-                  <div *ngIf="f.names.errors?.required">
+                  <div *ngIf="f.names.errors?.required" class="displayError">
                     <small>* El campo nombre es obligatorio</small>
                   </div>
                 </div>
             </div>
 
             <div class="column">
-                <label for="">Apellidos</label>
+                <label for="">Apellidos *</label>
                 <input type="text" formControlName="surnames" maxlength="30">
                 <div *ngIf="f.surnames.invalid && (f.surnames.dirty || f.surnames.touched)" class="text-danger ">
                   <div *ngIf="f.surnames.errors?.required">
@@ -25,7 +26,7 @@
 
         <div class="row">
             <div class="column">
-                <label for="pais">País</label>
+                <label for="pais">País *</label>
                 <select class="custom-select" (change)="changeCity($event)" formControlName="country">
                   <option value=""></option>
                   <option *ngFor="let country of countries" [value]="country.id">{{country.country}}</option>
@@ -37,12 +38,12 @@
                 </div>
             </div>
             <div class="column">
-                <label for="departamento">Departamento</label>
+                <label for="departamento">Ciudad *</label>
                 <select class="custom-select" formControlName="city">
                   <option value=""></option>
                   <option *ngFor="let city of cities" [value]="city.id">{{city.province}}</option>
                </select>
-                <div *ngIf="f.city.invalid && (f.city.dirty || f.city.touched)" class="text-danger ">
+                <div *ngIf="f.city.invalid && (f.city.dirty || f.city.touched) && f.city.value !== null" class="text-danger ">
                   <div *ngIf="f.city.errors?.required">
                     <small>* El campo Departamento es obligatorio</small>
                   </div>
@@ -52,7 +53,7 @@
 
         <div class="row">
             <div class="column">
-                <label for="">Email</label>
+                <label for="">Email *</label>
                 <input type="email" formControlName="email">
                 <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="text-danger ">
                   <div *ngIf="f.email.errors?.required">
@@ -64,8 +65,8 @@
                 </div>
             </div>
             <div class="column">
-                <label for="">Telefono</label>
-                <input type="number" formControlName="phone" maxLength="99999">
+                <label for="">Telefono *</label>
+                <input type="number" formControlName="phone" minlength="1" maxlength="10">
                 <div *ngIf="f.phone.invalid && (f.phone.dirty || f.phone.touched)" class="text-danger ">
                   <div *ngIf="f.phone.errors?.required">
                     <small>* El campo Telefono es obligatorio</small>
@@ -79,7 +80,7 @@
 
         <div class="row">
             <div class="column">
-                <label for="">Contraseña</label>
+                <label for="">Contraseña *</label>
                 <input type="password" formControlName="password">
                 <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="text-danger ">
                   <div *ngIf="f.password.errors?.required">
@@ -91,7 +92,7 @@
                 </div>
             </div>
             <div class="column">
-                <label for="">Repetir Contraseña</label>
+                <label for="">Repetir Contraseña *</label>
                 <input type="password" formControlName="passwordValidate">
                 <div *ngIf="f.passwordValidate.invalid && (f.passwordValidate.dirty || f.passwordValidate.touched)" class="text-danger ">
                   <div *ngIf="f.passwordValidate.errors?.required">
@@ -109,7 +110,7 @@
                 <input name="terms" type="checkbox" formControlName="terms"/>
                   Acepto los
                   <a href="/terms" target="_blank" class="color-a">
-                    Terminos y Condiciones
+                    Terminos y Condiciones *
                   </a>
             </label>
         </div>
