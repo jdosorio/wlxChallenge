@@ -6,6 +6,7 @@ import { TechnologiesComponent } from './technologies.component';
 import { FilterPipe } from 'src/app/helpers/pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavoritesModule } from 'src/app/components/favorites/favorites.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FavoritesModule } from 'src/app/components/favorites/favorites.module';
     TechnologiesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    FavoritesModule
+    FavoritesModule,
+    HttpClientModule
   ],
   exports: [
     TechnologiesComponent
