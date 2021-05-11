@@ -16,3 +16,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Capturas de la solucion
 
+![alt text](https://github.com/jdosorio/wlxChallenge/blob/main/src/assets/mysite.jpeg?raw=true)
