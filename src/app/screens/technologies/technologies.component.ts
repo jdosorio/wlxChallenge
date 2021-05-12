@@ -36,9 +36,12 @@ export class TechnologiesComponent implements OnInit {
 
   loadTech(){
     this.techService.getList().subscribe(result => {
-      this.techList = result;
-      this.techListOrg = result;
+        this.techList = result;
+        this.techListOrg = result;
+
+        return result
     })
+
   }
 
   filterSelect(){
