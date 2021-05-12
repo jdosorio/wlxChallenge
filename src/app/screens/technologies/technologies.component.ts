@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { types } from 'src/app/data';
+import { EnumTypes } from 'src/app/interfaces/global.interface';
 import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/technology.interface';
 import { TechnologiesService } from 'src/app/services/technologies.service';
 
@@ -10,11 +11,11 @@ import { TechnologiesService } from 'src/app/services/technologies.service';
 })
 export class TechnologiesComponent implements OnInit {
 
-  typesTech:any = types;
+  typesTech:EnumTypes = types;
   techType:string = '';
   techList:EnumTechnologyItems = [];
   techListOrg:EnumTechnologyItems = [];
-  searchText:any = '';
+  searchText:string = '';
   filterCount = { count: 0};
   @ViewChild('selectList', { static: false }) selectList: ElementRef;
   favorito:boolean;
@@ -46,7 +47,7 @@ export class TechnologiesComponent implements OnInit {
 
   filterSelect(){
     this.techList = this.techListOrg;
-    let filteredItems = this.techList.filter((it:any) => {
+    let filteredItems = this.techList.filter((it) => {
       return it.type.toLocaleLowerCase().includes(this.techType.toLocaleLowerCase());
     });
     this.techList = filteredItems;
