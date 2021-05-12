@@ -7,6 +7,7 @@ import { FilterPipe } from 'src/app/helpers/pipes/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavoritesModule } from 'src/app/components/favorites/favorites.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertsModule } from 'src/app/components/alerts/alerts.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     FavoritesModule,
-    HttpClientModule
+    HttpClientModule,
+    AlertsModule
   ],
   exports: [
     TechnologiesComponent

@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { types } from 'src/app/data';
 import { EnumTypes } from 'src/app/interfaces/global.interface';
 import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/technology.interface';
-import { TechnologiesService } from 'src/app/services/technologies.service';
+import { AppState } from 'src/app/store/app.reducers';
+import { loadTechnologies } from '../../store/actions';
 
 @Component({
   selector: 'app-technologies',
@@ -24,9 +26,11 @@ export class TechnologiesComponent implements OnInit {
   imgIcon:string;
   keyValue:string;
   isSort:boolean = false;
+  loading: boolean = false;
+  error: string;
 
   constructor(
-    private techService:TechnologiesService
+    private store: Store<AppState>
   ) { }
 
   ngOnInit(): void {
@@ -36,13 +40,15 @@ export class TechnologiesComponent implements OnInit {
   }
 
   loadTech(){
-    this.techService.getList().subscribe(result => {
-        this.techList = result;
-        this.techListOrg = result;
 
-        return result
-    })
+    this.store.select('technologies').subscribe( ({ technologies, loading, error}) => {
+      this.techList = technologies;
+      this.techListOrg = technologies;
+      this.loading = loading;
+      this.error = error;
+    });
 
+    this.store.dispatch( loadTechnologies() );
   }
 
   filterSelect(){
