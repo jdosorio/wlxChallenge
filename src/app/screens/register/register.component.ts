@@ -5,7 +5,7 @@ import { provinces,COUNTRIES } from 'src/app/data';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { Token } from 'src/app/interfaces/global.interface';
+import { EnumCountries, Token } from 'src/app/interfaces/global.interface';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ import { Token } from 'src/app/interfaces/global.interface';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup = new FormGroup({});
-  countries:any = COUNTRIES;
+  countries:EnumCountries = COUNTRIES;
   cities:any = [];
   provinces:any = provinces;
 
