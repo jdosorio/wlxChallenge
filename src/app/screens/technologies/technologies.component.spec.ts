@@ -14,6 +14,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable, of } from 'rxjs';
 import { TechListServiceFake } from 'src/app/mocks/list-tech.service.spec';
 import { By } from '@angular/platform-browser';
+import { Component, Input } from '@angular/core';
+import { Technology } from './interfaces/technology.interface';
+
+@Component({selector: 'app-favorites', template: ''})
+class FavoritesComponent {
+  @Input() key: Technology;
+}
 
 
 describe('TechnologiesComponent', () => {
@@ -82,9 +89,12 @@ describe('TechnologiesComponent', () => {
 
   it('should mark favorite tech', () => {
     const { debugElement } = fixture;
-    const favorite = debugElement.query(By.css('app-favorites'));
+    const favorite = debugElement.nativeElement.querySelector('app-favorites');
+    favorite.click()
 
-
+    fixture.whenStable().then(() => {
+      expect(component.favorito).toHaveBeenCalled();
+    })
   });
 
 
