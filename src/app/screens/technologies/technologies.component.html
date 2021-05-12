@@ -2,7 +2,7 @@
 <div class="container">
   <div class="form-area">
     <h1 class="title">Lista de Tecnologias</h1>
-      <div class="row">
+      <div class="row" *ngIf="error === null">
           <div class="column">
               <label for="pais">Buscar por Tecnologia</label>
               <input type="text" [(ngModel)]="searchText" name="searchText">
@@ -16,9 +16,9 @@
              </select>
           </div>
       </div>
-
+      <app-alerts *ngIf="error !== null"></app-alerts>
       <div class="row">
-        <div class="divTable blueTable">
+        <div class="divTable blueTable" *ngIf="!loading && error === null">
           <div class="divTableHeading">
             <div class="divTableRow">
               <div class="divTableHead">Favoritos</div>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-        <div class="spacer">
+        <div class="spacer" *ngIf="error === null">
           Total: {{ filterCount.count}}
         </div>
       </div>
