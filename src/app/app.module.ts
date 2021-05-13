@@ -14,6 +14,7 @@ import { appReducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
 import { EffectsArray } from './store/effects/index';
 import { AlertsComponent } from './components/alerts/alerts.component';
+import { TermsconditionsComponent } from './screens/termsconditions/termsconditions.component';
 
 @NgModule({
   declarations: [
