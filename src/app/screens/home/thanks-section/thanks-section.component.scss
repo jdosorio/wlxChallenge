@@ -22,4 +22,14 @@
     .btn{
       @include btnStyle($blue-color, $white-color);
     }
+
+    @include screen(768px){
+      background-image: url('/assets/Backgrounds/Bg_Footer@2x.png');
+    }
+
+    @include screen(600px){
+      background-image: url('/assets/Backgrounds/Bg_Footer.png');
+    }
 }
+
+

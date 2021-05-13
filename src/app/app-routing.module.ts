@@ -20,7 +20,10 @@ const routes: Routes = [
     path: 'technologies', loadChildren: () => import('./screens/technologies/technologies.module').then(m => m.TechnologiesModule),
     canLoad: [AuthGuard],
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'termscon', loadChildren: () => import('./screens/termsconditions/termsconditions.module').then(m => m.TermsconditionsModule),
+  },
 ];
 
 @NgModule({

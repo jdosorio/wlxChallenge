@@ -39,6 +39,7 @@
 
 @include screen(768px){
   #home{
+      background-image: url('/assets/Backgrounds/Bg_Header@2x.png');
       padding-top:160px
   }
 
@@ -58,18 +59,10 @@
 }
 
 @include screen(600px){
-  .img-style{
-    max-height: 270px;
-  }
 
-  .text-hero{
-      padding-top: 40px;
-  }
-}
-
-@include screen(600px){
   #home{
     display: block;
+    background-image: url('/assets/Backgrounds/Bg_Header.png');
   }
 
   .font-weight{
@@ -89,3 +82,4 @@
       max-height: 230px;
   }
 }
+
