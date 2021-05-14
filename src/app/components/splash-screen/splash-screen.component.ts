@@ -23,11 +23,8 @@ export class SplashScreenComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.windowWidth = `-${window.innerWidth}px`;
-
-      setTimeout( () => {
-        this.showSplash = !this.showSplash;
-      }, 500);
-    }, 3000);
+      this.showSplash = !this.showSplash;
+    }, 4000);
   }
 
   ngAfterViewInit(): void{

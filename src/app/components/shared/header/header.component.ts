@@ -41,7 +41,6 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   @HostListener('window:scroll', ['$event'])
   handleScroll(): void{
     const windowScroll = window.pageYOffset;
-    console.log(windowScroll, this.menuPosition);
     this.stickyClass = (windowScroll > this.menuPosition) ? true : false;
   }
 
