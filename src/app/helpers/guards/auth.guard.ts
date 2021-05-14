@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
         if (isAuthenticated) {
           return true;
         } else {
-          this.router.navigateByUrl('/')
+          void this.router.navigateByUrl('/');
           return false;
         }
       })
@@ -34,7 +34,7 @@ export class AuthGuard implements CanActivate {
         if (isAuthenticated) {
           return true;
         } else {
-          this.router.navigateByUrl('/')
+          void this.router.navigateByUrl('/');
           return false;
         }
       })

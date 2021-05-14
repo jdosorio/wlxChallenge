@@ -9,7 +9,4 @@ export interface Technology {
   logo: string;
 }
 
-export interface EnumTechnologyItems extends Array<Technology>{}
-
-let result: EnumTechnologyItems;
-
+export type EnumTechnologyItems = Technology[];

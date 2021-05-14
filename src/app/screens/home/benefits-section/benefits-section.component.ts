@@ -8,8 +8,7 @@ import { benefitsList, Benefits } from '../interfaces/benefits'
 })
 export class BenefitsSectionComponent implements OnInit {
 
-  benefits:any;
-  constructor() { }
+  benefits: Benefits[];
 
   ngOnInit(): void {
     this.benefits = benefitsList;

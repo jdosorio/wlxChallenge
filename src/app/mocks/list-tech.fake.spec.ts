@@ -1,4 +1,4 @@
-import { EnumTechnologyItems, Technology } from 'src/app/screens/technologies/interfaces/technology.interface'
+import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/technology.interface'
 
 export const LIST_TECH_FAKE: EnumTechnologyItems = [
     {

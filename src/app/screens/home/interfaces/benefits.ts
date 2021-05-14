@@ -1,6 +1,6 @@
 export interface Benefits{
-    icon: string, 
-    label: string
+    icon: string;
+    label: string;
 }
 
 export const benefitsList: Benefits[] = [

@@ -1,4 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { EnumTechnologyItems } from 'src/app/screens/technologies/interfaces/technology.interface';
+import { FilterCount } from '../../interfaces/global.interface';
 
 @Pipe({
   name: 'filter',
@@ -6,9 +8,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(items: any, searchText: string, filterCount:any): any {
+  transform(items: EnumTechnologyItems, searchText: string, filterCount: FilterCount): EnumTechnologyItems {
     if (!items) {
-      filterCount.count = items.length;
+      filterCount.count = 0;
       return [];
     }
     if (!searchText) {
@@ -17,7 +19,7 @@ export class FilterPipe implements PipeTransform {
     }
     searchText = searchText.toLocaleLowerCase();
 
-    let filteredItems = items.filter((it: { tech: string; }) => {
+    const filteredItems = items.filter((it) => {
       return it.tech.toLocaleLowerCase().includes(searchText);
     });
 

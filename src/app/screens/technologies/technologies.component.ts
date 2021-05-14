@@ -13,21 +13,21 @@ import { loadTechnologies } from '../../store/actions';
 })
 export class TechnologiesComponent implements OnInit {
 
-  typesTech:EnumTypes = types;
-  techType:string = '';
-  techList:EnumTechnologyItems = [];
-  techListOrg:EnumTechnologyItems = [];
-  searchText:string = '';
+  typesTech: EnumTypes = types;
+  techType = '';
+  techList: EnumTechnologyItems = [];
+  techListOrg: EnumTechnologyItems = [];
+  searchText = '';
   filterCount = { count: 0};
   @ViewChild('selectList', { static: false }) selectList: ElementRef;
-  favorito:boolean;
+  favorito: boolean;
   iconInactve =  '../../../assets/Ic_Inactive_Start.svg';
   iconActive = '../../../assets/Ic_Active_Start.svg';
-  imgIcon:string;
-  keyValue:string;
-  isSort:boolean = false;
-  loading: boolean = false;
-  error: string;
+  imgIcon: string;
+  keyValue: string;
+  isSort = false;
+  loading = false;
+  error: unknown;
 
   constructor(
     private store: Store<AppState>
@@ -35,11 +35,12 @@ export class TechnologiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTech();
-    if(!localStorage.getItem('favorites'))
-      localStorage.setItem('favorites',JSON.stringify([]));
+    if (!localStorage.getItem('favorites')) {
+      localStorage.setItem('favorites', JSON.stringify([]));
+    }
   }
 
-  loadTech(){
+  loadTech(): void{
 
     this.store.select('technologies').subscribe( ({ technologies, loading, error}) => {
       this.techList = technologies;
@@ -51,20 +52,20 @@ export class TechnologiesComponent implements OnInit {
     this.store.dispatch( loadTechnologies() );
   }
 
-  filterSelect(){
+  filterSelect(): void {
     this.techList = this.techListOrg;
-    let filteredItems = this.techList.filter((it) => {
+    const filteredItems = this.techList.filter((it) => {
       return it.type.toLocaleLowerCase().includes(this.techType.toLocaleLowerCase());
     });
     this.techList = filteredItems;
  }
 
-  sortList(){
+  sortList(): void{
     this.isSort = !this.isSort;
-    if(this.isSort){
-      this.techList = this.techList.sort((a,b) => a.tech.localeCompare(b.tech));
+    if (this.isSort){
+      this.techList = this.techList.sort((a, b) => a.tech.localeCompare(b.tech));
     }else{
-      this.techList = this.techList.sort((a,b) => b.tech.localeCompare(a.tech));
+      this.techList = this.techList.sort((a, b) => b.tech.localeCompare(a.tech));
     }
  }
 

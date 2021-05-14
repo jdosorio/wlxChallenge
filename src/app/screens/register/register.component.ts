@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/unbound-method */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { CustomValidator } from 'src/app/helpers/classes/matchPassword';
-import { provinces,COUNTRIES } from 'src/app/data';
+import { provinces, COUNTRIES } from 'src/app/data';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { EnumCountries, Token } from 'src/app/interfaces/global.interface';
+import { EnumCountries } from 'src/app/interfaces/global.interface';
 
 @Component({
   selector: 'app-register',
@@ -15,15 +17,15 @@ import { EnumCountries, Token } from 'src/app/interfaces/global.interface';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup = new FormGroup({});
-  countries:EnumCountries = COUNTRIES;
+  countries: EnumCountries = COUNTRIES;
   cities:any = [];
   provinces:any = provinces;
 
   constructor(
     public fm: FormBuilder,
-    private authService:AuthService,
+    private authService: AuthService,
     private router: Router,
-    private authenticationService:AuthenticationService
+    private authenticationService: AuthenticationService
   ) {
 
     this.registerForm = fm.group({
@@ -44,8 +46,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void{
     this.authenticationService.isAuthenticated.subscribe( data => {
-      if(data){
-        this.router.navigateByUrl('/technologies');
+      if (data){
+        void this.router.navigateByUrl('/technologies');
       }
     });
   }
@@ -54,19 +56,21 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
-  onSubmit(){
+  onSubmit(): void{
     delete this.registerForm.value.passwordValidate;
 
     this.authService.register(this.registerForm.value).subscribe((resp) => {
       localStorage.setItem('token', resp.token);
       this.authenticationService.isAuthenticated.next(true);
-      this.router.navigateByUrl('/technologies');
-    })
+      void this.router.navigateByUrl('/technologies');
+    });
   }
 
-  changeCity(event:Event){
-    this.registerForm.controls['city'].setValue("");
-    this.cities = this.provinces[(<HTMLInputElement>event.target).value].provinces;
+  changeCity(event: Event): void{
+    const changeCity = 'city';
+    this.registerForm.controls[changeCity].setValue('');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    this.cities = this.provinces[(event.target as HTMLInputElement).value].provinces;
   }
 
 }
