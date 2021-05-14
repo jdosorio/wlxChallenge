@@ -10,6 +10,5 @@ export const loadTechnologiesSuccess = createAction(
 
 export const loadTechnologiesError = createAction(
     '[Technologies] Load Technologies Error',
-    props<{ payload: any }>()
+    props<{ payload }>()
 );
-

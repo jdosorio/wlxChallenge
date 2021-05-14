@@ -13,10 +13,10 @@ export class AuthenticationService {
     this.loadToken();
   }
 
-  async loadToken(){
+  loadToken(): void{
     const token = localStorage.getItem('token');
 
-    if(token){
+    if (token){
       this.token = token;
       this.isAuthenticated.next(true);
     }else{
@@ -24,7 +24,7 @@ export class AuthenticationService {
     }
   }
 
-  async logout(): Promise<void>{
+  logout(): void{
     this.isAuthenticated.next(false);
     localStorage.clear();
   }

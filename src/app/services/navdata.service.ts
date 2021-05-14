@@ -6,13 +6,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class NavDataService {
 
-  private navData = new BehaviorSubject(JSON.parse(localStorage.getItem('favorites') || '[]').length);
+  private navData = new BehaviorSubject(this.convertObject().length);
   currentData = this.navData.asObservable();
 
-  constructor() { }
+  updateCounterFav(): void {
+    const cont = this.convertObject().length;
+    this.navData.next(cont);
+  }
 
-  updateCounterFav() {
-    var cont = JSON.parse(localStorage.getItem('favorites') || '[]').length;
-    this.navData.next(cont)
-    }
+  convertObject(): string[]{
+    return JSON.parse(localStorage.getItem('favorites') || '[]') as string[];
+  }
 }

@@ -1,1 +1,1 @@
-export * from './technologies.actions'
+export * from './technologies.actions';

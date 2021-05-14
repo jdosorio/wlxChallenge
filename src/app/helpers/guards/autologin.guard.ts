@@ -17,7 +17,7 @@ export class AutologinGuard implements CanActivate {
       take(1),
       map(isAuthenticated => {
         if (isAuthenticated) {
-          this.router.navigateByUrl('/technologies')
+          void this.router.navigateByUrl('/technologies');
           return false;
         } else {
           return true;
@@ -32,7 +32,7 @@ export class AutologinGuard implements CanActivate {
       take(1),
       map(isAuthenticated => {
         if (isAuthenticated) {
-          this.router.navigateByUrl('/technologies')
+          void this.router.navigateByUrl('/technologies');
           return true;
         } else {
           return false;

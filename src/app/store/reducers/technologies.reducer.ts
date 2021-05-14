@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Action, createReducer, on } from '@ngrx/store';
 import { loadTechnologies, loadTechnologiesError, loadTechnologiesSuccess } from '../actions';
 import { EnumTechnologyItems } from '../../screens/technologies/interfaces/technology.interface';
 
 export interface TechnologiesState {
-    technologies  : EnumTechnologyItems,
-    loaded : boolean,
-    loading: boolean,
-    error  : any
+    technologies: EnumTechnologyItems;
+    loaded: boolean;
+    loading: boolean;
+    error: any;
 }
 
 export const technologiesInitialState: TechnologiesState = {
@@ -14,9 +16,9 @@ export const technologiesInitialState: TechnologiesState = {
     loaded : false,
     loading: false,
     error  : null
-}
+};
 
-const _technologiesReducer = createReducer(technologiesInitialState,
+const technologiesReducerApp = createReducer(technologiesInitialState,
 
     on( loadTechnologies, state => ({ ...state, loading: true })),
 
@@ -38,12 +40,8 @@ const _technologiesReducer = createReducer(technologiesInitialState,
             message: payload.message
         }
     })),
-
-
-
-
 );
 
-export function technologiesReducer(state, action) {
-    return _technologiesReducer(state, action);
+export function technologiesReducer(state: TechnologiesState | undefined, action: Action): TechnologiesState {
+    return technologiesReducerApp(state, action);
 }

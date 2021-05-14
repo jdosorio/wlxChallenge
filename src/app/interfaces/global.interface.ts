@@ -1,20 +1,22 @@
 
-export class Token {
+export interface Token {
   token: string;
 }
 
 export class Country{
-  id:string;
-  country:string;
+  id: string;
+  country: string;
 }
 
-export interface EnumCountries extends Array<Country>{}
-
-let result: EnumCountries;
+export type EnumCountries = Country[];
 
 export class Types{
-  id:string;
-  description:string;
+  id: string;
+  description: string;
 }
 
-export interface EnumTypes extends Array<Types>{}
+export type EnumTypes = Types[];
+
+export interface FilterCount {
+  count: number;
+}

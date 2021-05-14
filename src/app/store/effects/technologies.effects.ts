@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as technologiesActions from '../actions/technologies.actions';
-import { tap, mergeMap, map, catchError } from 'rxjs/operators';
+import { mergeMap, map, catchError } from 'rxjs/operators';
 import { TechnologiesService } from '../../services/technologies.service';
 import { of } from 'rxjs';
 
@@ -20,7 +21,7 @@ export class TechnologiesEffects {
             mergeMap(
                 () => this.technologiesService.getList()
                     .pipe(
-                        map( technologies => technologiesActions.loadTechnologiesSuccess({ technologies: technologies }) ),
+                        map( technologies => technologiesActions.loadTechnologiesSuccess({ technologies }) ),
                         catchError( err => of(technologiesActions.loadTechnologiesError({ payload: err })) )
                     )
             )

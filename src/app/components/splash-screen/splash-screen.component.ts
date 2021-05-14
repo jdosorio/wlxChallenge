@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
@@ -14,17 +14,15 @@ import { Component, OnInit } from '@angular/core';
     ])
   ]
 })
-export class SplashScreenComponent implements OnInit {
+export class SplashScreenComponent implements OnInit, AfterViewInit {
 
   windowWidth: string;
-  showSplash: boolean = true;
-  state: string = 'default';
-
-  constructor() { }
+  showSplash = true;
+  state = 'default';
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.windowWidth = '-' + window.innerWidth + 'px';
+      this.windowWidth = `-${window.innerWidth}px`;
 
       setTimeout( () => {
         this.showSplash = !this.showSplash;
@@ -32,7 +30,7 @@ export class SplashScreenComponent implements OnInit {
     }, 3000);
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit(): void{
     this.state = (this.state === 'default') ? 'rotated' : 'default';
   }
 

@@ -1,6 +1,6 @@
-import { EnumCountries, EnumTypes } from "./interfaces/global.interface"
+import { EnumCountries, EnumTypes } from './interfaces/global.interface';
 
-export const COUNTRIES:EnumCountries = [
+export const COUNTRIES: EnumCountries = [
   {
     id: 'ar',
     country: 'Argentina'
@@ -21,7 +21,7 @@ export const COUNTRIES:EnumCountries = [
     id: 'br',
     country: 'Brasil'
   }
-]
+];
 
 export const provinces = {
   ar: {
@@ -156,18 +156,18 @@ export const provinces = {
   }
 }
 
-export const types:EnumTypes = [
+export const types: EnumTypes = [
   {
-    id: "backend",
-    description: "Back-end"
+    id: 'backend',
+    description: 'Back-end'
   },
   {
-    id: "frontend",
-    description: "Front-end"
+    id: 'frontend',
+    description: 'Front-end'
   },
   {
-    id: "mobile",
-    description: "Mobile"
+    id: 'mobile',
+    description: 'Mobile'
   },
 ]
 
