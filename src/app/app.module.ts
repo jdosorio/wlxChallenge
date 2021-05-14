@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
@@ -13,16 +13,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
 import { EffectsArray } from './store/effects/index';
-import { AlertsComponent } from './components/alerts/alerts.component';
-import { TermsconditionsComponent } from './screens/termsconditions/termsconditions.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SplashScreenComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
     HttpClientModule,
