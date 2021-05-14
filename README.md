@@ -26,7 +26,7 @@ Se busco aplicar diferentes conceptos tales como:
 - Se hizo de decorador @Input para el componente favoritos con el fin de aplicar diferentes opciones para compartir data entre componentes.
 - Se utilizo inyeccion de dependencias para el contador del navbar asi como la validacion de carga de rutas para añadir una imagen de espera en la carga.
 - Se agrego un splash screen para hacer mas vistosa la presentacion inicial
-- Se hizo uso de angular animations para las transiciones.
+- Se hizo uso de angular animations para la animacion del splash screen de la aplicacion.
 
 ## Run Project
  - Correr `npm install`
@@ -35,10 +35,6 @@ Se busco aplicar diferentes conceptos tales como:
 ## Correr Pruebas Unitarias
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Correr end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Capturas de la solucion
 
