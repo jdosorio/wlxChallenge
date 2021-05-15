@@ -1,10 +1,10 @@
 <section id="thanks-section">
     <h2 class="bold-text">
-        Gracias por
-        <span class="blue-text">completar el ejercicio</span>
+        {{ 'thanksSections.thanks' | translate}}
+        <span class="blue-text">{{ 'thanksSections.exercise' | translate}}</span>
     </h2>
-    <span>Te invitamos a ver mas informacion</span>
+    <span>{{ 'thanksSections.invitation' | translate}}</span>
     <div class="thanks-button">
-      <button type="button" class="btn" onclick=" window.open('https://www.wolox.com.ar','_blank')">Siguenos</button>
+      <button type="button" class="btn" onclick=" window.open('https://www.wolox.com.ar','_blank')">{{ 'thanksSections.follow' | translate}}</button>
     </div>
   </section>

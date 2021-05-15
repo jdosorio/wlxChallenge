@@ -2,12 +2,12 @@
   <div class="logo" tabindex="0" [routerLink]="['/']"></div>
   <nav>
       <ul class="nav__links">
-        <li *ngIf="!isAuthenticated"><a [routerLink]="['/']">Inicio</a></li>
-        <li *ngIf="!isAuthenticated"><a (click)="scroll('benefits-section')" >Beneficios</a></li>
+        <li *ngIf="!isAuthenticated"><a [routerLink]="['/']">{{ 'header.home' | translate }}</a></li>
+        <li *ngIf="!isAuthenticated"><a (click)="scroll('benefits-section')" >{{ 'header.benefits' | translate }}</a></li>
         <li *ngIf="countFavorites > 0"><span class="favIcon">{{countFavorites}}</span></li>
-        <li *ngIf="isAuthenticated"><a (click)="logout()">Salir</a></li>
-        <li *ngIf="!isAuthenticated"><button type="button" class="btn" [routerLink]="['/register']">Registro</button></li>
-        <li *ngIf="isAuthenticated"><button type="button" class="btn" [routerLink]="['/technologies']">Tecnologias</button></li>
+        <li *ngIf="isAuthenticated"><a (click)="logout()">{{ 'header.exit' | translate }}</a></li>
+        <li *ngIf="!isAuthenticated"><button type="button" class="btn" [routerLink]="['/register']">{{ 'header.register' | translate }}</button></li>
+        <li *ngIf="isAuthenticated"><button type="button" class="btn" [routerLink]="['/technologies']">{{ 'header.technologies' | translate }}</button></li>
       </ul>
   </nav>
 </header>

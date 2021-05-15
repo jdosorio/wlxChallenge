@@ -7,13 +7,15 @@ import { HomeSectionComponent } from './home-section/home-section.component';
 import { TwitterSectionComponent } from './twitter-section/twitter-section.component';
 import { BenefitsSectionComponent } from './benefits-section/benefits-section.component';
 import { ThanksSectionComponent } from './thanks-section/thanks-section.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   declarations: [HomeComponent, HomeSectionComponent, TwitterSectionComponent, BenefitsSectionComponent, ThanksSectionComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }

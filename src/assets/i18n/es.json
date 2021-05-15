@@ -1,0 +1,38 @@
+{
+  "header": {
+    "home": "Inicio",
+    "benefits": "Beneficios",
+    "register": "Registro",
+    "technologies": "Tecnologias",
+    "exit": "Salir"
+  },
+  "homeSection": {
+      "title": "Bienvenido a tu",
+      "subtitle": "Entrevista Técnica",
+      "in": "en",
+      "company": "Wolox"
+  },
+  "twitterSection": {
+    "follow": "Siguenos",
+    "phraseOne": "Trabajamos para",
+    "convert": "convertir",
+    "ideas": "ideas",
+    "in": "en",
+    "phraseThree": "productos."
+  },
+  "benefitsSection": {
+    "title": "Entre los beneficios que ofrecemos se encuentran ",
+    "schedule": "Flexibilidad Horaria",
+    "homeOffice": "Home Office",
+    "trainings": "Capacitaciones y Workshops",
+    "snacks": "Snacks, frutas y bebidas gratis",
+    "remoteWeek": "Semana Remota",
+    "neuronal": "Trabajar en ultimas tecnologías"
+  },
+  "thanksSections": {
+    "thanks": "Gracias por",
+    "exercise": "completar el ejercicio",
+    "invitation": "Te invitamos a ver mas información",
+    "follow": "Conocer Mas"
+  }
+}

@@ -2,9 +2,10 @@
 <section id="home">
     <div class="text-hero font-weight">
         <div>
-            Bienvenido a tu <br>
-            <span class="weight-bold">Entrevista T&eacute;cnica</span> en<br>
-            <span class="bold-text green-text">Wolox</span>
+            {{ 'homeSection.title' | translate }} <br>
+            <span class="weight-bold">{{ 'homeSection.subtitle' | translate }}</span> {{ 'homeSection.in' | translate }}<br>
+            <span class="bold-text green-text">{{ 'homeSection.company' | translate }}</span><br>
+            <button (click)="languageChange()">{{ typeButton}}</button>
         </div>
     </div>
     <div class="img-hero">

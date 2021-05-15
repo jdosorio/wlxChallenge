@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { SpinnerService } from './services/spinner.service';
 
@@ -9,7 +9,7 @@ import { SpinnerService } from './services/spinner.service';
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit{
 
   title = 'wlxChallenge';
   showLoading:boolean;
@@ -20,7 +20,7 @@ export class AppComponent {
     this.spinnerService.isLoading.subscribe(show => this.showLoading = show);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.router.events
         .subscribe((event) => {
             if(event instanceof NavigationStart) {
