@@ -22,12 +22,12 @@
   },
   "benefitsSection": {
     "title": "Entre los beneficios que ofrecemos se encuentran ",
-    "schedule": "Flexibilidad Horaria",
-    "homeOffice": "Home Office",
-    "trainings": "Capacitaciones y Workshops",
+    "flexibility": "Flexibilidad Horaria",
+    "home_office": "Home Office",
+    "workshops": "Capacitaciones y Workshops",
     "snacks": "Snacks, frutas y bebidas gratis",
-    "remoteWeek": "Semana Remota",
-    "neuronal": "Trabajar en ultimas tecnologías"
+    "laptop": "Semana Remota",
+    "brain": "Trabajar en ultimas tecnologías"
   },
   "thanksSections": {
     "thanks": "Gracias por",

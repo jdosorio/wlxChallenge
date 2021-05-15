@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { benefitsList, Benefits } from '../interfaces/benefits'
+import { benefitsList, Benefits } from '../interfaces/benefits';
 
 @Component({
   selector: 'app-benefits-section',
