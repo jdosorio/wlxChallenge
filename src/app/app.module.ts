@@ -14,6 +14,9 @@ import { appReducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
 import { EffectsArray } from './store/effects/index';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,13 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
     HomeModule,
     HttpClientModule,
     SharedModule,
@@ -39,3 +49,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
