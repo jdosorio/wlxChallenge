@@ -22,12 +22,12 @@
   },
   "benefitsSection": {
     "title": "Among the benefits we offer are",
-    "schedule": "Flexible schedule",
-    "homeOffice": "Home Office",
-    "trainings": "Trainings and Workshops",
+    "flexibility": "Flexible schedule",
+    "home_office": "Home Office",
+    "workshops": "Trainings and Workshops",
     "snacks": "Free snacks, fruits and drinks",
-    "remoteWeek": "Remote Week",
-    "neuronal": "Work on latest technologies"
+    "laptop": "Remote Week",
+    "brain": "Work on latest technologies"
   },
   "thanksSections": {
     "thanks": "Thanks you for",

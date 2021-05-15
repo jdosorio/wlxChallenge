@@ -6,7 +6,7 @@
     <div class="benefits-content">
         <div class="benefit-item" *ngFor="let benefit of benefits">
             <img src="{{benefit.icon}}" class="benefitImage zoom" />
-            <div class="benefitText">{{benefit.label}}</div>
+            <div class="benefitText">{{ 'benefitsSection.' + benefit.id | translate}}</div>
         </div>
     </div>
 </section>
